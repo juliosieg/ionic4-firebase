@@ -20,13 +20,11 @@ export class ContactService {
   }
 
   get(key: string){
-
     return this.db.database.ref().child(this.PATH + key)
     .once('value')
     .then(snapshot =>{
       return snapshot.val();
     })
-
   }
 
   save(contact: any){
